@@ -1,4 +1,4 @@
-# 🎓 Sistem Pendukung Keputusan (SPK) Rekomendasi Tempat Magang Mahasiswa
+# Sistem Pendukung Keputusan (SPK) Rekomendasi Tempat Magang Mahasiswa
 
 **Capstone Project - Kelompok 43 | S1 Sistem Informasi Telkom University Jakarta**
 
@@ -6,7 +6,7 @@ Aplikasi web Sistem Pendukung Keputusan (SPK) berbasis metode **Profile Matching
 
 ---
 
-## 👥 Tim Pengembang (Kelompok 43)
+## Tim Pengembang (Kelompok 43)
 
 - **Enrico Steven Ernest** (102042300075)
 - **Muhammad Abrar Rayhan** (102042330088)
@@ -17,7 +17,7 @@ Aplikasi web Sistem Pendukung Keputusan (SPK) berbasis metode **Profile Matching
 
 ---
 
-## 🚀 Tech Stack (Zero-Budget / Free-Tier Optimized)
+## Tech Stack (Zero-Budget / Free-Tier Optimized)
 
 - **Framework:** Next.js 15 (App Router) + TypeScript
 - **Styling & UI:** Tailwind CSS + shadcn/ui + Lucide Icons
@@ -28,7 +28,7 @@ Aplikasi web Sistem Pendukung Keputusan (SPK) berbasis metode **Profile Matching
 
 ---
 
-## 🔄 Alur Utama Sistem (End-to-End Workflow)
+## Alur Utama Sistem (End-to-End Workflow)
 
 1. **Pemilihan Peminatan (Initial Filtering):** Mahasiswa memilih peminatan **SAGE** (_Software and IT Governance Engineering_) atau **DELTA** (_Data Exploration, Learning & Translational Analytics_).
 2. **Input Nilai Akademik (Knowledge Representation):** Mahasiswa memasukkan nilai huruf (`A`, `AB`, `B`, `BC`, `C`, `D`, `E`) pada mata kuliah yang relevan dengan kategori kompetensi di peminatannya. Sistem mengonversi nilai ke bobot nilai mutu (`0.00` - `4.00`) dan menghitung rata-rata per kategori kompetensi.
@@ -43,7 +43,7 @@ Aplikasi web Sistem Pendukung Keputusan (SPK) berbasis metode **Profile Matching
 
 ---
 
-## 📊 Pemetaan Kategori Kompetensi & Rubrik
+## Pemetaan Kategori Kompetensi & Rubrik
 
 ### 1. Kategori Kompetensi per Peminatan
 
@@ -100,7 +100,7 @@ _Catatan: Jika satu kategori kompetensi diwakili lebih dari satu mata kuliah, ni
 
 ---
 
-## 🗄️ Skema Database (Supabase PostgreSQL)
+## Skema Database (Supabase PostgreSQL)
 
 1. `specializations`: `id`, `code` (`SAGE` | `DELTA`), `name`, `description`
 2. `competency_categories`: `id`, `specialization_id`, `name`, `description`
@@ -113,7 +113,7 @@ _Catatan: Jika satu kategori kompetensi diwakili lebih dari satu mata kuliah, ni
 
 ---
 
-## ⚙️ Cara Instalasi & Menjalankan di Local / Antigravity
+## Cara Instalasi & Menjalankan
 
 1. **Inisialisasi Project:**
 
@@ -147,4 +147,3 @@ _Catatan: Jika satu kategori kompetensi diwakili lebih dari satu mata kuliah, ni
    npm run dev
    ```
    Buka `http://localhost:3000` di browser.
-

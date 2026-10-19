@@ -1,69 +1,88 @@
-import Image from "next/image";
+import Link from "next/link";
+import { UserNav } from "@/components/UserNav";
+import { History, Sparkles, Database, ShieldCheck } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="min-h-screen bg-zinc-50 dark:bg-black">
+      {/* Header */}
+      <header className="border-b bg-white/80 backdrop-blur dark:bg-black/80 dark:border-zinc-800">
+        <div className="mx-auto max-w-5xl px-6 py-3.5 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 rounded-lg bg-zinc-900 text-white dark:bg-white dark:text-black flex items-center justify-center font-bold text-xs">
+              43
+            </div>
+            <div>
+              <div className="text-sm font-bold leading-none">Capstone 43</div>
+              <div className="text-[11px] text-zinc-500">Telkom University Jakarta</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/history"
+              className="text-xs text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-1.5"
+            >
+              <History size={14} /> Riwayat
+            </Link>
+            <UserNav />
+          </div>
+        </div>
+      </header>
+
+      {/* Main Hero */}
+      <div className="mx-auto max-w-5xl px-6 py-12">
+        <div className="rounded-2xl border bg-white p-8 dark:bg-zinc-900 dark:border-zinc-800 shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium bg-zinc-50 dark:bg-zinc-800">
+            Kelompok 43 — S1 Sistem Informasi Telkom University Jakarta
+          </div>
+          <h1 className="mt-4 text-3xl font-extrabold tracking-tight">
+            SPK Rekomendasi Tempat Magang
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-2 text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm">
+            Sistem Pendukung Keputusan menggunakan metode <b>Profile Matching (Kusrini, 2007)</b> dan evaluasi portofolio cerdas berbasis <b>Gemini 2.5 Flash</b>, kini terintegrasi dengan <b>Supabase Cloud Database & Authentication</b> untuk penyimpanan riwayat penilaian mahasiswa secara permanen.
           </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/spk"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-zinc-900 px-6 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-black transition-colors gap-2"
+            >
+              <Sparkles size={16} /> Mulai SPK — 6 Langkah →
+            </Link>
+            <Link
+              href="/history"
+              className="inline-flex h-11 items-center justify-center rounded-full border px-6 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors gap-2"
+            >
+              <History size={16} /> Riwayat Rekomendasi
+            </Link>
+          </div>
+
+          <ul className="mt-8 grid sm:grid-cols-3 gap-3 text-sm">
+            <li className="rounded-xl border p-4 bg-zinc-50 dark:bg-black">
+              <b>SAGE & DELTA</b>
+              <br />
+              <span className="text-zinc-500 text-xs">
+                12 Kategori kompetensi & 10 lowongan magang riil
+              </span>
+            </li>
+            <li className="rounded-xl border p-4 bg-zinc-50 dark:bg-black">
+              <b>Profile Matching</b>
+              <br />
+              <span className="text-zinc-500 text-xs">
+                Hitung GAP, bobot nilai, NCF, NSF, Radar & Bar Chart
+              </span>
+            </li>
+            <li className="rounded-xl border p-4 bg-zinc-50 dark:bg-black">
+              <span className="flex items-center gap-1.5 font-bold">
+                <Database size={14} className="text-emerald-600" /> Supabase Storage
+              </span>
+              <span className="text-zinc-500 text-xs">
+                Auth login & simpan histori rekomendasi ke cloud DB
+              </span>
+            </li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
